@@ -22,5 +22,5 @@ staticfiles/
 .DS_Store
 Thumbs.db
 
-# Migrations cache (اختیاری: فقط migration های خالی اولیه رو نذار)
+# Migrations cache
 */migrations/__pycache__/
