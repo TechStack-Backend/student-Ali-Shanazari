@@ -1,0 +1,26 @@
+# Byte-compiled / cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env/
+
+# Django stuff
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# IDEs
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Migrations cache (اختیاری: فقط migration های خالی اولیه رو نذار)
+*/migrations/__pycache__/

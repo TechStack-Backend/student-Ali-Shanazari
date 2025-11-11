@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}developers_cvs{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header>
+        <a href="{% url 'developers-list' %}">Developers List</a>
+    </header>
+    <hr/>
+
+    {% block content %}{% endblock %}
+</body>
+</html>

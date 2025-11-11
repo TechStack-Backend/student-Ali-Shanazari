@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}CV {{ dev.first_name }} {{ dev.last_name }}{% endblock %}
+{% block content %}
+  <h1>CV</h1>
+  <p><strong>Full name:</strong> {{ dev.first_name }} {{ dev.last_name }}</p>
+  <p><strong>Username:</strong> @{{ dev.username }}</p>
+
+  <h3>Skills</h3>
+  <ul>
+    {% for s in dev.skills %}
+      <li>{{ s }}</li>
+    {% empty %}
+      <li>No skills listed.</li>
+    {% endfor %}
+  </ul>
+
+  <p><a href="{% url 'developers-list' %}">Back to Developers List</a></p>
+{% endblock %}
