@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>لیست Projects</h2>
+  {% for p in projects %}
+    <div class="card">
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.description|default:"(بدون توضیح)" }}</p>
+      <p><strong>Developers:</strong>
+        {% if p.developers.all %}
+          <ul>
+            {% for d in p.developers.all %}
+              <li>{{ d.first_name }} {{ d.last_name }}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          (هیچ developer ای اختصاص ندارد)
+        {% endif %}
+      </p>
+    </div>
+  {% empty %}
+    <p>هیچ Project ای وجود ندارد.</p>
+  {% endfor %}
+{% endblock %}

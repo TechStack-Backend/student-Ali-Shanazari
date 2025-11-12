@@ -1,0 +1,9 @@
+{% extends "skilldev/temp" %}
+{% block content %}
+  <h2>ساخت Developer جدید</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">ذخیره</button>
+  </form>
+{% endblock %}
