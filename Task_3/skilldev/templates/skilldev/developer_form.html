@@ -1,6 +1,6 @@
-{% extends "skilldev/temp" %}
+{% extends "base.html" %}
 {% block content %}
-  <h2>ساخت Developer جدید</h2>
+  <h2>ساخت توسعه دهنده ی جدید</h2>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}

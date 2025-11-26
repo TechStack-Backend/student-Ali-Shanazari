@@ -2,8 +2,12 @@ from django import forms
 from .models import Project,Developer
 
 class ProjectForm(forms.ModelForm):
-    developer = forms.ModelChoiceField(queryset=Developer.objects.all(),widget=forms.CheckboxSelectMultiple,
-                                       required=False)
+    developer = forms.ModelMultipleChoiceField(
+        queryset=Developer.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False
+    )
+
     class Meta:
         model = Project
         fields = ['title','description','developer']
