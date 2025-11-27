@@ -1,0 +1,21 @@
+{% extends "skilldev/base.html" %}
+{% block title %}Project List{% endblock %}
+
+{% block content %}
+<h2>Projects</h2>
+
+<a href="{% url 'project_create' %}">+ Add Project</a>
+
+<ul>
+{% for p in object_list %}
+    <li>
+        <a href="{% url 'project_detail' p.pk %}">
+            {{ p.title }}
+        </a>
+    </li>
+{% empty %}
+    <li>No projects found.</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

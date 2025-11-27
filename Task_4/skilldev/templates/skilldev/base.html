@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}SkillDev{% endblock %}</title>
+</head>
+<body>
+
+<h1>SkillDev Panel</h1>
+
+<nav>
+    <a href="{% url 'developer_list' %}">Developers</a> |
+    <a href="{% url 'project_list' %}">Projects</a>
+</nav>
+
+<hr>
+
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li style="color:green;">{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
