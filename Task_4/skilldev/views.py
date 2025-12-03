@@ -67,7 +67,7 @@ class DeveloperUpdateView(UpdateView):
     def form_valid(self, form):
         context = self.get_context_data()
         skill_formset = context['skill_formset']
-        if form.is_valid():
+        if form.is_valid() and skill_formset.is_valid():
             self.object = form.save()
             skill_formset.instance = self.object
             skill_formset.save()

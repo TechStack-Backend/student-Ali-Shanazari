@@ -8,7 +8,7 @@
 
 <h3>Developers in this project:</h3>
 <ul>
-{% for d in object.developer.all %}
+{% for d in object.developers.all %}
     <li>{{ d.first_name }} {{ d.last_name }}</li>
 {% empty %}
     <li>No developers</li>
