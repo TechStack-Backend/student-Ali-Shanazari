@@ -1,0 +1,6 @@
+{% extends "skilldev/base.html" %}
+{% block content %}
+    {% load static %}
+    <h2>You are logged out</h2>
+    <a href="{% url 'login' %}">Login again</a>
+{% endblock %}

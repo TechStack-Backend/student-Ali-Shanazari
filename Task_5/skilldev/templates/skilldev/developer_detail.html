@@ -1,0 +1,31 @@
+{% extends "skilldev/base.html" %}
+{% block title %}Developer Detail{% endblock %}
+
+{% block content %}
+<h2>{{ object.first_name }} {{ object.last_name }}</h2>
+
+<p>Email: {{ object.email }}</p>
+<p>Age: {{ object.age }}</p>
+
+<h3>Skills:</h3>
+<ul>
+{% for skill in object.skills.all %}
+    <li>{{ skill.title }}</li>
+{% empty %}
+    <li>No skills assigned</li>
+{% endfor %}
+</ul>
+
+<h3>Projects:</h3>
+<ul>
+{% for p in object.projects.all %}
+    <li>{{ p.title }}</li>
+{% empty %}
+    <li>No projects</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'developer_update' object.pk %}">Edit</a> |
+<a href="{% url 'developer_delete' object.pk %}">Delete</a>
+
+{% endblock %}
