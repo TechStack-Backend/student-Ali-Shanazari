@@ -1,0 +1,17 @@
+{% extends "skilldev/base.html" %}
+{% block title %}Developer Form{% endblock %}
+
+{% block content %}
+<h2>{{ form.instance.pk|yesno:"Update Developer,Create Developer" }}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ skill_formset.management_form }}
+    {% for form in skill_formset %}
+        {{ form.as_p }}
+    {% endfor %}
+    <button type="submit">Save</button>
+</form>
+
+{% endblock %}
