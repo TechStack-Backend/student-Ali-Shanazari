@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>لیست Developers</h2>
+  {% for dev in developers %}
+    <div class="card">
+      <h3>{{ dev.first_name }} {{ dev.last_name }} — {{ dev.email }}</h3>
+      <p>سن: {{ dev.age }}</p>
+      <p><strong>Skills:</strong>
+        {% if dev.skills.all %}
+          <ul>
+            {% for s in dev.skills.all %}
+              <li>{{ s.title }}{% if s.description %} — {{ s.description }}{% endif %}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          (ندارد)
+        {% endif %}
+      </p>
+      <p><strong>Projects:</strong>
+        {% if dev.projects.all %}
+          <ul>
+            {% for p in dev.projects.all %}
+              <li>{{ p.title }}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          (هیچ پروژه ای اختصاص ندارد)
+        {% endif %}
+      </p>
+    </div>
+  {% empty %}
+    <p>هیچ توسعه دهنده ای وجود ندارد.</p>
+  {% endfor %}
+{% endblock %}

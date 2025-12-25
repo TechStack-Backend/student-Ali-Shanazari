@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8">
+  <title>مدیریت Developer & Project</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    /* استایل خیلی ساده تا نیازی به بوت‌استرپ نباشد */
+    body { font-family: sans-serif; max-width: 900px; margin: 20px auto; }
+    header { margin-bottom: 20px; }
+    nav a { margin-right: 10px; }
+    .card { border:1px solid #ddd; padding:10px; margin-bottom:10px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1> Developers & Projects</h1>
+    <nav>
+      <a href="{% url 'developer_list' %}">لیست Developers</a> |
+      <a href="{% url 'project_list' %}">لیست Projects</a> |
+      <a href="{% url 'developer_create' %}">ساخت Developer</a> |
+      <a href="{% url 'project_create' %}">ساخت Project</a> |
+      <a href="/admin/">Admin</a>
+    </nav>
+  </header>
+
+  {% block content %}{% endblock %}
+</body>
+</html>
