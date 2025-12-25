@@ -1,0 +1,18 @@
+{% extends "skilldev/base.html" %}
+{% block content %}
+{% load static %}
+<h2>My Profile</h2>
+
+{% if user.profile.profile_picture %}
+    <img src="{{ user.profile.profile_picture.url }}" width="120" />
+{% else %}
+    <img src="{% static 'images/default-profile.jpg' %}" width="120" />
+{% endif %}
+
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+
+{% endblock %}
